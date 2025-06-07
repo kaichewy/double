@@ -9,6 +9,9 @@
     "frontend:ios": "cd frontend && npm run ios",
     "frontend:android": "cd frontend && npm run android",
     "dev": "concurrently \"npm run backend:dev\" \"npm run frontend\"",
+    "dev:ios": "concurrently \"npm run backend:dev\" \"npm run frontend\" \"npm run frontend:ios\"",
+    "dev:android": "concurrently \"npm run backend:dev\" \"npm run frontend\" \"npm run frontend:android\"",
+    "simulator": "open -a Simulator",
     "install:all": "npm install && cd frontend && npm install && cd ../backend && npm install"
   },
   "dependencies": {
