@@ -16,10 +16,18 @@ begin
   select decrypted_secret into sendbird_app_id
   from vault.decrypted_secrets
   where name = 'sendbird_app_id';
+  
+  if sendbird_app_id is null then
+    raise exception 'Secret "sendbird_app_id" not found in Vault.';
+  end if;
 
   select decrypted_secret into sendbird_api_token
   from vault.decrypted_secrets
   where name = 'sendbird_api_token';
+
+  if sendbird_api_token is null then
+    raise exception 'Secret "sendbird_api_token" not found in Vault.';
+  end if;
 
   sendbird_api_url := 'https://api-' || sendbird_app_id || '.sendbird.com/v3/group_channels/';
 

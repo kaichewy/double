@@ -1,7 +1,3 @@
--- This is the updated seed file.
--- The INSERT statements for 'children', 'covid_vaccine', and 'family_plans' have been removed.
--- The 'profiles' INSERT statement has been modified to remove the corresponding foreign key columns.
-
 insert into "public"."ethnicities" ("id", "name") values
   (1, 'Black/African Descent'),
   (2, 'East Asian'),
@@ -183,7 +179,6 @@ insert into "public"."zodiac_signs" ("id", "name") values
   (11, 'Aquarius'),
   (12, 'Pisces');
 
--- MODIFIED: Removed children_id, covid_vaccine_id, and family_plan_id columns and their corresponding values.
 insert into "public"."profiles" ("id", "first_name", "last_name", "dob", "height_cm", "neighbourhood", "latitude", "longitude", "gender_id", "zodiac_sign_id", "sexuality_id", "max_distance_km", "min_age", "max_age", "phone") values
   ('00000000-0000-0000-0000-000000000000', 'Javel', NULL, '1995-12-25', 180, 'Montego Bay', 18.499634842789888, -77.91729233644581, 1, 9, 1, 160, 18, 100, '18761234567'),
   ('00000000-0000-0000-0000-000000000001', 'David', NULL, '2001-11-02', 180, 'Kingston', 17.9374623588942, -76.779836513002, 1, 8, 1, 160, 18, 100, '10000000001'),

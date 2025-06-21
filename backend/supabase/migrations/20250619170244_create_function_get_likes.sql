@@ -32,10 +32,7 @@ select
     'first_name', p.first_name,
     'age', extract(year from age(p.dob))::int,
     'height_cm', p.height_cm,
-    'neighborhood', p.neighborhood,
-    'children', children.name,
-    'family_plan', family_plans.name,
-    'covid_vaccine', covid_vaccine.name,
+    'neighbourhood', p.neighbourhood,
     'zodiac_sign', zodiac_signs.name,
     'gender', genders.name,
     'sexuality', sexualities.name,
@@ -83,9 +80,6 @@ join profiles p on p.id = i.actor_id
 left join profile_photos on profile_photos.id = i.photo_id
 left join profile_answers on profile_answers.id = i.answer_id
 left join prompts on prompts.id = profile_answers.prompt_id
-left join children on children.id = p.children_id
-left join family_plans on family_plans.id = p.family_plan_id
-left join covid_vaccine on covid_vaccine.id = p.covid_vaccine_id
 left join zodiac_signs on zodiac_signs.id = p.zodiac_sign_id
 left join genders on genders.id = p.gender_id
 left join sexualities on sexualities.id = p.sexuality_id
